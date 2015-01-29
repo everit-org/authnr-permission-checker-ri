@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with Everit - Authentication Authorization Permission Checker RI Tests.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.everit.osgi.authorization.god.tests.mock;
+package org.everit.osgi.authnr.permissionchecker.ri.tests.mock;
 
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Service;

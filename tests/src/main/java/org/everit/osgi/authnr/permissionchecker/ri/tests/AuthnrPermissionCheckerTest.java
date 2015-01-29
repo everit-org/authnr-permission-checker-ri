@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with Everit - Authentication Authorization Permission Checker RI Tests.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.everit.osgi.authorization.god.tests;
+package org.everit.osgi.authnr.permissionchecker.ri.tests;
 
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.ConfigurationPolicy;
@@ -23,8 +23,8 @@ import org.apache.felix.scr.annotations.Property;
 import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.Service;
 import org.everit.osgi.authnr.permissionchecker.AuthnrPermissionChecker;
-import org.everit.osgi.authorization.god.tests.mock.MockAuthenticationContextComponent;
-import org.everit.osgi.authorization.god.tests.mock.MockPermissionCheckerComponent;
+import org.everit.osgi.authnr.permissionchecker.ri.tests.mock.MockAuthenticationContextComponent;
+import org.everit.osgi.authnr.permissionchecker.ri.tests.mock.MockPermissionCheckerComponent;
 import org.everit.osgi.dev.testrunner.TestRunnerConstants;
 import org.junit.Assert;
 import org.junit.Test;
