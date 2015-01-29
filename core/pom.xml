@@ -34,7 +34,7 @@
 
   <packaging>bundle</packaging>
   <name>Everit - Authenticated Authorization Permission Cheker RI</name>
-  <description>Authentication API based reference implementation of the Authenticated Authorization Permission Cheker API</description>
+  <description>Authentication Context API based reference implementation of the Authenticated Authorization Permission Cheker API</description>
 
 
   <properties>
