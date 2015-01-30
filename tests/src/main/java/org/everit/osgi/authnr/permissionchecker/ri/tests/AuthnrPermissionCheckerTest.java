@@ -23,6 +23,7 @@ import org.apache.felix.scr.annotations.Property;
 import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.Service;
 import org.everit.osgi.authnr.permissionchecker.AuthnrPermissionChecker;
+import org.everit.osgi.authnr.permissionchecker.UnauthorizedException;
 import org.everit.osgi.authnr.permissionchecker.ri.tests.mock.MockAuthenticationContextComponent;
 import org.everit.osgi.authnr.permissionchecker.ri.tests.mock.MockPermissionCheckerComponent;
 import org.everit.osgi.dev.testrunner.TestRunnerConstants;
@@ -60,5 +61,14 @@ public class AuthnrPermissionCheckerTest {
 
         Assert.assertEquals(MockPermissionCheckerComponent.HAS_PERMISSION,
                 authnrPermissionChecker.hasPermission(TARGET_RESOURCE_ID, ACTIONS));
+
+        try {
+            authnrPermissionChecker.checkPermission(TARGET_RESOURCE_ID, ACTIONS);
+            Assert.fail();
+        } catch (UnauthorizedException e) {
+            Assert.assertArrayEquals(authnrPermissionChecker.getAuthorizationScope(), e.getAuthorizationScope());
+            Assert.assertEquals(TARGET_RESOURCE_ID, e.getTargetResourceId());
+            Assert.assertArrayEquals(ACTIONS, e.getActions());
+        }
     }
 }
